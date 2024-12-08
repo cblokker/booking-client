@@ -15,7 +15,6 @@ export default function BookingFlow() {
     currentStep,
     setStep,
     selectedCoachId,
-    selectCoach,
     selectedMeetingTypeId,
     selectedTimeSlot,
     setBookingError
@@ -78,7 +77,7 @@ export default function BookingFlow() {
       default:
         return null;
     }
-  }, [currentStep, selectedCoachId]);
+  }, [currentStep]);
 
   return (
     <div className="max-w-4xl mx-auto">
