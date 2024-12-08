@@ -78,7 +78,7 @@ export default function BookingFlow() {
       default:
         return null;
     }
-  }, [currentStep, selectedCoachId, selectCoach]);
+  }, [currentStep, selectedCoachId]);
 
   return (
     <div className="max-w-4xl mx-auto">

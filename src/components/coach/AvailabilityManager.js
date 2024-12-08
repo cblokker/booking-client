@@ -19,7 +19,7 @@ function AvailabilityManager() {
     if (schedule && !isEqual(schedule, localSchedule)) {
       setLocalSchedule(schedule);
     }
-  }, [schedule, setLocalSchedule]);
+  }, [schedule, setLocalSchedule, localSchedule]);
 
   const handleSubmit = async () => {
     if (!localSchedule) return;

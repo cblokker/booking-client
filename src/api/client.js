@@ -1,8 +1,11 @@
 import axios from 'axios';
 axios.defaults.withCredentials = true;
 
+const apiUrl = process.env.RAILS_APP_API_URL;
+const apiVersion = process.env.RAILS_APP_API_VERSION;
+
 const client = axios.create({
-  baseURL: process.env.REACT_APP_BOOKING_SERVER_BASE_URL || 'http://localhost:3000/api/v1',
+  baseURL: `${apiUrl}/api/#{${apiVersion}}` || 'http://localhost:3000/api/v1',
   headers: {
     'Content-Type': 'application/json',
     Accept: 'application/json',
