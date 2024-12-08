@@ -5,7 +5,7 @@ import { useBookingStore } from '../../../stores/bookingStore';
 import { useUsers } from '../../../queries/user/useUsers';
 
 export default function CoachSelector() {
-  const { data: allUsers = [], isLoading: isUsersLoading } = useUsers();
+  const { data: allUsers = [] } = useUsers();
   const coaches = useMemo(() => allUsers.filter((user) => user.role === 'coach'), [allUsers]);
 
   const dropdownRef = useRef(null);

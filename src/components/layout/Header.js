@@ -9,7 +9,7 @@ export default function Header() {
   const queryClient = useQueryClient();
   const { data: currentUser, isLoading: isCurrentUserLoading } = useCurrentUser();
   const { data: users, isLoading: isUsersLoading } = useUsers();
-  const { mutate: switchUser, isLoading: isSwitching, error: switchError } = useSwitchUser();
+  const { mutate: switchUser, isLoading: isSwitching } = useSwitchUser();
 
   const handleUserSwitch = (userId) => {
     switchUser(userId, {

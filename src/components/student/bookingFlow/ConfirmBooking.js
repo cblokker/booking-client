@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { format } from 'date-fns';
-import { Calendar, Clock, User, Repeat } from 'lucide-react';
+import { Calendar, Clock, User } from 'lucide-react';
 import { useBookingStore } from '../../../stores/bookingStore';
 import { useUsers } from '../../../queries/user/useUsers';
 

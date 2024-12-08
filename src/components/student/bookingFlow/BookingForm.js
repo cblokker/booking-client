@@ -1,4 +1,4 @@
-import React, { useMemo, useCallback }from 'react';
+import React, { useCallback }from 'react';
 import { useCreateBookingMutation } from '../../../queries/booking/useBookings';
 import { useBookingStore } from '../../../stores/bookingStore';
 import CoachSelector from './CoachSelector';
@@ -21,11 +21,6 @@ export default function BookingFlow() {
     setBookingError
   } = useBookingStore();
 
-  // NOTE: Since we are alreadly fetching all users in the header dropdown, let's just
-  // filter the cached react query - a real world app wouldn't be doing this.
-  // const { data: allUsers = [], isLoading: isUsersLoading } = useUsers();
-  // const coaches = useMemo(() => allUsers.filter((user) => user.role === 'coach'), [allUsers]);
-  // const { data: availableSlots, isLoading: isSlotsLoading } = useAvailableSlotsQuery(selectedCoachId, selectedDate);
   const createBookingMutation = useCreateBookingMutation();
 
   // TODO: Can put these step methods in a hook
