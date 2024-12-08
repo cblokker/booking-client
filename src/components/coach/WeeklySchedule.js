@@ -1,42 +1,23 @@
 import React from 'react';
 import DayScheduleCard from './DayScheduleCard';
+import { SCHEDULE_CONSTANTS } from '../../constants/schedule';
 
-const DAYS = [
-  { id: 0, name: 'SUN' },
-  { id: 1, name: 'MON' },
-  { id: 2, name: 'TUE' },
-  { id: 3, name: 'WED' },
-  { id: 4, name: 'THU' },
-  { id: 5, name: 'FRI' },
-  { id: 6, name: 'SAT' },
-];
+export default function WeeklySchedule({ schedule, errors }) {
+  const { DAYS_MAP } = SCHEDULE_CONSTANTS;
 
-export default function WeeklySchedule({
-  schedule,
-  errors,
-  onToggleDay,
-  onUpdateWindow,
-  onAddWindow,
-  onRemoveWindow,
-}) {
   return (
     <div className="space-y-6">
       <div className="grid gap-4">
-        {DAYS.map((day) => (
+        {Object.entries(DAYS_MAP).map(([id, name]) => (
           <DayScheduleCard
-            key={day.id}
-            dayId={day.id}
-            dayName={day.name}
-            schedule={schedule[day.id]}
-            error={errors[day.id]}
-            onToggleDay={onToggleDay}
-            onUpdateWindow={onUpdateWindow}
-            onAddWindow={onAddWindow}
-            onRemoveWindow={onRemoveWindow}
+            key={id}
+            dayId={id}
+            dayName={name}
+            schedule={schedule[id]}
+            error={errors[id]}
           />
         ))}
       </div>
-
     </div>
   );
 }

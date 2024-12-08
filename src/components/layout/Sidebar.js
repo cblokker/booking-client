@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { UserCircle2, Calendar, BookOpen } from 'lucide-react';
-import { useUserStore } from '../../stores/userStore';
+import { useCurrentUser } from './../../queries/sessions/useSessions'; // Import the React Query hook
 
 const CoachNavItems = [
   { 
@@ -48,12 +48,17 @@ const NavItem = ({ icon, label, path }) => {
 };
 
 export default function Sidebar() {
-  const { currentUser } = useUserStore();
+  const { data: currentUser, isLoading } = useCurrentUser(); // Fetch current user
+
+  // Show a loading state until the current user is fetched
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
 
   // Combine shared items with role-specific items
   const roleNavItems = currentUser?.role === 'coach' 
-    ? [...CoachNavItems, ...SharedNavItems] 
-    : [...StudentNavItems, ...SharedNavItems];
+    ? [...SharedNavItems, ...CoachNavItems] 
+    : [...SharedNavItems, ...StudentNavItems];
 
   return (
     <div className="w-64 h-screen bg-white border-r border-gray-200 fixed left-0 top-0">

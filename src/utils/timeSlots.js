@@ -1,6 +1,4 @@
 import { parse, format, addMinutes } from 'date-fns';
-// import { MEETING_TYPES } from '../data/meetingTypes';
-// TODO: Hook up to API
 const MEETING_TYPES = [
   { id: 1, name: '2 hour session', durationMinutes: 120 }
 ];

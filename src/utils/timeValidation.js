@@ -1,4 +1,5 @@
-import { parse, addMinutes, isWithinInterval, areIntervalsOverlapping } from 'date-fns';
+import { parse, addMinutes, areIntervalsOverlapping } from 'date-fns';
+
 const MEETING_TYPES = [
   { id: 1, name: '2 hour session', durrationMinutes: 120 }
 ];
@@ -11,7 +12,6 @@ export function getWindowInterval(window) {
   return { start, end };
 }
 
-// must be better way to do this!
 export function checkOverlap(windows) {
   if (windows.length < 2) {
     return { hasOverlap: false, message: '', overlappingPairs: [] };
@@ -40,8 +40,4 @@ export function checkOverlap(windows) {
   }
 
   return { hasOverlap: false, message: '', overlappingPairs: [] };
-}
-
-export function isWindowOverlapping(windowIndex, overlappingPairs) {
-  return overlappingPairs.some(pair => pair.includes(windowIndex));
 }
