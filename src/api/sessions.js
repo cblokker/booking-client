@@ -3,7 +3,7 @@ import getClient from './client';
 const client = getClient();
 
 const sessionsApi = {
-  getCurrentUser: () => client.get('/show_current_user'),
+  getCurrentUser: () => client.get('/show_current_user', { withCredentials: true }),
 
   switchUser: (userId) => 
     client.post('/switch_user', { user_id: userId }, { withCredentials: true }),

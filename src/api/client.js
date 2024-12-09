@@ -41,7 +41,7 @@ const getClient = () => {
   }
 
   return axios.create({
-    baseURL: `${apiUrl}/api/${apiVersion}`,
+    baseURL: `${apiUrl}api/${apiVersion}`,
     headers: {
       'Content-Type': 'application/json',
       Accept: 'application/json',
