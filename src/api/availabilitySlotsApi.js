@@ -1,4 +1,6 @@
-import client from './client';
+import getClient from './client';
+
+const client = getClient();
 
 const availabilitySlotsApi = {
   // TODO: Be able to get ranges w/ paginagion

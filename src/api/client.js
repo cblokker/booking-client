@@ -28,12 +28,11 @@
 
 // export default client;
 
-
 import axios from 'axios';
 
 axios.defaults.withCredentials = true;
 
-const client = () => {
+const getClient = () => {
   const apiUrl = process.env.REACT_APP_BOOKING_API_URL;
   const apiVersion = process.env.REACT_APP_BOOKING_API_VERSION;
 
@@ -50,4 +49,4 @@ const client = () => {
   });
 };
 
-export default client;
+export default getClient;

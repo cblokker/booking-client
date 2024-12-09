@@ -1,4 +1,6 @@
-import client from './client';
+import getClient from './client';
+
+const client = getClient();
 
 const availabilityWindowsApi = {
   // For current_user in rails session

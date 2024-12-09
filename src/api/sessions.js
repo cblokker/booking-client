@@ -1,4 +1,6 @@
-import client from './client';
+import getClient from './client';
+
+const client = getClient();
 
 const sessionsApi = {
   getCurrentUser: () => client.get('/show_current_user'),

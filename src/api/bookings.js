@@ -1,4 +1,6 @@
-import client from './client';
+import getClient from './client';
+
+const client = getClient();
 
 const bookingsApi = {
   getBookings: (params = {}) => {
