@@ -1,8 +1,8 @@
 import axios from 'axios';
 axios.defaults.withCredentials = true;
 
-const apiUrl = process.env.REACT_APP_BOOKING_API_URL || 'http://localhost:3000';
-const apiVersion = process.env.REACT_APP_BOOKING_API_VERSION || 'v1';
+const apiUrl = process.env.REACT_APP_BOOKING_API_URL;
+const apiVersion = process.env.REACT_APP_BOOKING_API_VERSION;
 
 console.log({ apiUrl, apiVersion });
 
