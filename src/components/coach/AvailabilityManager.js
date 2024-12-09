@@ -8,7 +8,11 @@ import isEqual from 'lodash.isequal';
 
 function AvailabilityManager() {
   const { data: currentUser } = useCurrentUser();
-  const { errors, setLocalSchedule, localSchedule } = useScheduleStore();
+  const {
+    errors,
+    setLocalSchedule,
+    localSchedule
+  } = useScheduleStore();
 
   const { data: schedule, isLoading } = useScheduleQuery(currentUser?.id);
   const updateScheduleMutation = useUpdateScheduleMutation(currentUser?.id);
@@ -19,7 +23,7 @@ function AvailabilityManager() {
     if (schedule && !isEqual(schedule, localSchedule)) {
       setLocalSchedule(schedule);
     }
-  }, [schedule, setLocalSchedule, localSchedule]);
+  }, [schedule, setLocalSchedule]);
 
   const handleSubmit = async () => {
     if (!localSchedule) return;
